@@ -5,6 +5,17 @@ module injetor(
   output reg [14:0] saida
 );
 
-// implemente seu código aqui
+integer i;
+
+always @(*) begin
+  saida = entrada; //  sem erro
+  if (erro) begin
+    for (i = 0; i < 15; i = i + 1) begin
+      if (i == n) begin
+        saida[i] = ~entrada[i]; // ~ n
+      end
+    end
+  end
+end
 
 endmodule
